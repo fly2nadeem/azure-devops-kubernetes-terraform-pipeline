@@ -23,6 +23,8 @@ stages:
     - bash: python --version 
     - bash: mvn -version 
     - bash: ls -R $(Build.ArtifactStagingDirectory)
+    - powershell: |
+         echo "$(resources.pipeline.simclient_Binaries.runName)"
     - task: CopyFiles@2
       inputs:
         SourceFolder: '$(System.DefaultWorkingDirectory)'
